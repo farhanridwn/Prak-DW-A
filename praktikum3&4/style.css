@@ -1,0 +1,118 @@
+/* --- GLOBAL RESET & FONDASI --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #d11f1f;
+  color: #212529;
+}
+
+/* Membuat kontainer utama untuk layout */
+.main-container {
+  max-width: 1200px;
+  margin: 2rem auto; /* Memberi jarak atas/bawah dan menengahkan */
+  padding: 1rem;
+}
+
+
+/* --- LAYOUT UTAMA (MOBILE FIRST) --- */
+.main-container {
+  /* ... (styling dari langkah 1) ... */
+  display: grid;
+  grid-template-columns: 1fr; /* Default: 1 kolom untuk mobile */
+  gap: 2rem; /* Jarak antar form dan pratinjau */
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form, article {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* --- STYLING FORMULIR --- */
+fieldset {
+  border: 1px solid #1f1010;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[list],
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #171212;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+
+/* --- MEDIA QUERIES UNTUK RESPONSIVENESS --- */
+
+/* Tampilan Desktop (lebar 992px atau lebih) */
+@media (min-width: 992px) {
+  .main-container {
+    /* Ubah layout utama menjadi 2 kolom */
+    /* Kolom pertama (form) lebarnya 1 bagian, kolom kedua (pratinjau) lebarnya 1.5 bagian */
+    grid-template-columns: 1fr 1.5fr; 
+  }
+}
+
+
+/* --- STYLING TOMBOL & INTERAKTIVITAS --- */
+button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #eb1414; /* Warna Aksen */
+  color: rgb(8, 5, 5);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #d30000; /* Aksen Gelap */
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #c77e3e; /* Warna Aksen */
+  box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
+}
+
+/* Styling tambahan untuk pratinjau */
+article img, article video {
+  max-width: 100%; /* Membuat gambar & video responsif */
+  height: auto;
+  border-radius: 4px;
+}
+
+
+
